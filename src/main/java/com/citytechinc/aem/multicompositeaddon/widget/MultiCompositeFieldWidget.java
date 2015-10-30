@@ -10,7 +10,7 @@ public final class MultiCompositeFieldWidget extends AbstractWidget {
 	public static final String XTYPE = "multicompositefield";
 
 	private final boolean matchBaseName;
-
+	private final String baseName;
 	private final String prefix;
 
 	public MultiCompositeFieldWidget(final MultiCompositeFieldWidgetParameters parameters) {
@@ -18,6 +18,7 @@ public final class MultiCompositeFieldWidget extends AbstractWidget {
 
 		this.matchBaseName = parameters.isMatchBaseName();
 		this.prefix = parameters.getPrefix();
+		this.baseName = parameters.getBaseName();
 	}
 
 	public String getPrefix() {
@@ -26,5 +27,9 @@ public final class MultiCompositeFieldWidget extends AbstractWidget {
 
 	public boolean isMatchBaseName() {
 		return matchBaseName;
+	}
+	
+	public String getBaseName() {
+		return baseName;
 	}
 }

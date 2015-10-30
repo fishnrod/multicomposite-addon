@@ -24,15 +24,20 @@ import com.citytechinc.cq.component.touchuidialog.widget.AbstractTouchUIWidget;
 public class MultiCompositeFieldWidget extends AbstractTouchUIWidget {
 
 	public static final String RESOURCE_TYPE = "multicomposite/granite/multicomposite";
-
+	private final String baseName;
 	private final boolean allowReorder;
 
 	public MultiCompositeFieldWidget(MultiCompositeFieldWidgetParameters parameters) {
 		super(parameters);
 		this.allowReorder = parameters.isAllowReorder();
+		this.baseName = parameters.getBaseName();
 	}
 
 	public boolean isAllowReorder() {
 		return allowReorder;
+	}
+	
+	public String getBaseName() {
+		return baseName;
 	}
 }

@@ -66,6 +66,12 @@
             this.ol = this.$element.children('.js-coral-Multicompositefield-list');
             
             this.allowReorder=this.$element.data("allow-reorder");
+            this.baseName=this.$element.data("base-name");
+            if(this.baseName && this.baseName.length>0){
+                this.itemName=this.baseName
+            }else{
+                this.itemName="item_"
+            }    
 
             if (this.ol.length === 0) {
                 this.ol = $(listTemplate).prependTo(this.$element);
@@ -109,7 +115,7 @@
                 	var count=$(this).find("ol").first().children().length;
             		var name=$(this).data("multi-name");
             		for(var i=0;i<=count;i++){
-            			var input = $("<input>").attr("type", "hidden").attr("name", name+"/item_"+i+"@Delete");
+            			var input = $("<input>").attr("type", "hidden").attr("name", name+"/"+this.itemName+i+"@Delete");
             			form.append(input);
             		}
             	});
@@ -158,7 +164,7 @@
             	if(count < originalCount){
             		var name=self.$element.data("multi-name");
             		for(var i=count+1;i<=originalCount;i++){
-            			var input = $("<input>").attr("type", "hidden").attr("name", name+"/item_"+i+"@Delete");
+            			var input = $("<input>").attr("type", "hidden").attr("name", name+"/"+this.itemName+i+"@Delete");
             			self.$element.append(input);
             		}
             	}

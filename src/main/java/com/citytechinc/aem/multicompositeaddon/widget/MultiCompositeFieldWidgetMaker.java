@@ -40,6 +40,7 @@ public final class MultiCompositeFieldWidgetMaker extends AbstractWidgetMaker<Mu
 		InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		final MultiCompositeField multiCompositeFieldAnnotation = getAnnotation(MultiCompositeField.class);
 
+		widgetParameters.setBaseName(multiCompositeFieldAnnotation.baseName());
 		widgetParameters.setMatchBaseName(multiCompositeFieldAnnotation.matchBaseName());
 		widgetParameters.setPrefix(multiCompositeFieldAnnotation.prefix());
 		widgetParameters.setContainedElements(buildWidgetCollection());

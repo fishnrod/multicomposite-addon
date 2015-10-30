@@ -14,4 +14,7 @@ public @interface MultiCompositeField {
 	String prefix() default "./";
 
 	boolean allowReorder() default true;
+	
+	String  baseName() default "item_";
+	
 }
